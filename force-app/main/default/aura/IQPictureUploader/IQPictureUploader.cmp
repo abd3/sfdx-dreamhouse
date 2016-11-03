@@ -8,10 +8,6 @@
     <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
 
     <lightning:card footer="Powered by Einstein">
-		<aura:set attribute="title">
-            <lightning:icon iconName="utility:photo" size="small" />
-            IQ Picture Uploader
-        </aura:set>
         <div class="drop-target" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
             <div class="placeholder">
                 <lightning:icon iconName="utility:home" size="large" />
