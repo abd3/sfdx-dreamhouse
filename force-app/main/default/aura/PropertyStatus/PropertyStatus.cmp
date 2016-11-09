@@ -2,7 +2,7 @@
                 access="global">
 
     <!-- Visual progress bar indicating the current status of a property -->
-    <aura:attribute name="steps" type="String[]" default="" />
+    <aura:attribute name="steps" type="String[]" default="[One,Two]" />
 
     <c:GetPicklistValues sobject="Property__c" picklistfield="Days_On_Market__c" values="{!v.steps}" />
     
