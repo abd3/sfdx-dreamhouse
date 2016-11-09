@@ -2,9 +2,9 @@
                 access="global">
 
     <!-- Visual progress bar indicating the current status of a property -->
-    <aura:attribute name="steps" type="String[]" default="[One,Two]" />
+    <aura:attribute name="steps" type="String[]" default="" />
 
-    <c:GetPicklistValues sobject="Property__c" picklistfield="Days_On_Market__c" values="{!v.steps}" />
+    <c:GetPicklistValues sobject="Property__c" picklistfield="Status__c" values="{!v.steps}" />
     
     <aura:attribute name="recordId" type="Id" />
     <aura:attribute name="property" type="Property__c" />
@@ -12,11 +12,11 @@
     <force:recordPreview aura:id="propertyService" 
                          recordId="{!v.recordId}" 
                          targetRecord="{!v.property}" 
-                         fields="['Id', 'Days_On_Market__c']"
+                         fields="['Id', 'Status__c']"
 						 recordUpdated="{!c.recordUpdated}"
                          mode="EDIT" />
     
-    <c:Process steps="{!v.steps}" currentStep="{!v.property.Days_On_Market__c}" extraStep="Off Market"
+    <c:Process steps="{!v.steps}" currentStep="{!v.property.Status__c}" extraStep="Off Market"
                stepChange="{!c.onStepChange}"/>
     
 </aura:component>
